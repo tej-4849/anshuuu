@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Someone Special ❤️</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ffe6f0, #f5e6ff);
+      overflow-x: hidden;
+      color: #333;
+    }
+
+    section {
+      padding: 80px 10%;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero h1 {
+      font-size: 70px;
+      background: linear-gradient(to right, #ff4d88, #b300ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s infinite alternate;
+    }
+
+    .hero p {
+      margin-top: 20px;
+      font-size: 24px;
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    .btn {
+      margin-top: 35px;
+      padding: 15px 35px;
+      background: #ff4d88;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.4s;
+      box-shadow: 0 10px 25px rgba(255, 77, 136, 0.3);
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      background: #e6005c;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ff99cc;
+      }
+      to {
+        text-shadow: 0 0 25px #ff1a75;
+      }
+    }
+
+    /* Floating Hearts */
+    .heart {
+      position: absolute;
+      color: pink;
+      animation: float 6s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(0);
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.5);
+      }
+    }
+
+    /* Gallery */
+    .gallery h2,
+    .quotes h2,
+    .videos h2,
+    .final h2 {
+      text-align: center;
+      font-size: 50px;
+      margin-bottom: 50px;
+      color: #ff3385;
+    }
+
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .gallery-container img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 25px;
+      transition: 0.5s;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .gallery-container img:hover {
+      transform: translateY(-10px) scale(1.05);
+    }
+
+    /* Quotes */
+    .quotes-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .quote-box {
+      background: white;
+      padding: 35px;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: 0.4s;
+    }
+
+    .quote-box:hover {
+      transform: scale(1.05);
+    }
+
+    .quote-box p {
+      font-size: 24px;
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    /* Videos */
+    .video-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    /* Final Message */
+    .final-box {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(10px);
+      padding: 60px;
+      border-radius: 40px;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+
+    .final-box p {
+      font-size: 28px;
+      line-height: 1.8;
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 18px;
+      color: #666;
+    }
+
+    @media(max-width: 768px) {
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .gallery h2,
+      .quotes h2,
+      .videos h2,
+      .final h2 {
+        font-size: 35px;
+      }
+
+      .final-box p {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Music -->
+  <audio autoplay loop controls id="bgMusic" style="position:fixed; bottom:20px; right:20px; z-index:1000; border-radius:20px; box-shadow:0 5px 15px rgba(0,0,0,0.2);">
+    <source src="WhatsApp Audio 2026-05-27 at 11.27.51 PM.mpeg" type="audio/mp3">
+    Your browser does not support audio.
+  </audio>
+
+  <!-- Floating Hearts -->
+  <div class="heart" style="left:10%; font-size:30px; animation-duration:7s;">❤️</div>
+  <div class="heart" style="left:30%; font-size:25px; animation-duration:6s;">💖</div>
+  <div class="heart" style="left:50%; font-size:35px; animation-duration:8s;">💕</div>
+  <div class="heart" style="left:70%; font-size:28px; animation-duration:5s;">💘</div>
+  <div class="heart" style="left:90%; font-size:40px; animation-duration:9s;">💝</div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Made with love for Anshu ❤️</h1>
+    <p>
+      A little digital universe made with memories, smiles, beautiful moments, and feelings.
+    </p>
+
+    <button class="btn">Explore Memories ✨</button>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section class="gallery">
+    <h2>Beautiful Memories 📸</h2>
+
+    <div class="gallery-container">
+      <img src="IMG_2566.JPG.jpeg" alt="photo">
+
+      <img src="IMG_2567.JPG.jpeg" alt="photo">
+
+      <img src="IMG_2568.JPG.jpeg" alt="photo">
+
+      <img src="IMG_2569.JPG.jpeg" alt="photo">
+    </div>
+  </section>
+
+  <!-- Quotes -->
+  <section class="quotes">
+    <h2>Sweet Words 💌</h2>
+
+    <div class="quotes-container">
+      <div class="quote-box">
+        <p>“You are the reason ordinary moments feel magical.”</p>
+      </div>
+
+      <div class="quote-box">
+        <p>“Every smile of yours feels like sunshine after rain.”</p>
+      </div>
+
+      <div class="quote-box">
+        <p>“Some people make the world beautiful just by existing.”</p>
+      </div>
+
+      <div class="quote-box">
+        <p>“In a world full of trends, your soul feels timeless.”</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Videos -->
+  <section class="videos">
+    <h2>Video Moments 🎥</h2>
+
+    <div class="video-container">
+      <video controls>
+        <source src="IMG_2563.MP4" type="video/mp4">
+      </video>
+
+      <video controls>
+        <source src="IMG_2564.MP4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+  <!-- Final Message -->
+  <section class="final">
+    <div class="final-box">
+      <h2>A Little Surprise 🌸</h2>
+
+      <p>
+        Some people enter our lives quietly and end up making every moment brighter.
+        This website is just a tiny reflection of all the happiness and positivity you bring.
+      </p>
+
+      <button class="btn">Stay Amazing ✨</button>
+    </div>
+  </section>
+
+  <footer>
+    Made with ❤️ and creativity.
+  </footer>
+
+</body>
+</html>

@@ -148,6 +148,32 @@
       border-radius: 25px;
     }
 
+    /* QUOTES */
+    .quotes-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .quote-box {
+      background: rgba(255,255,255,0.8);
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: 0.4s;
+    }
+
+    .quote-box:hover {
+      transform: translateY(-10px);
+    }
+
+    .quote-box p {
+      font-size: 20px;
+      font-style: italic;
+      line-height: 1.6;
+      color: #444;
+    }
+
     .video-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -185,7 +211,7 @@
 
 <!-- MUSIC -->
 <audio id="bgMusic" loop>
-  <source src="WhatsApp Audio 2026-05-27 at 11.27.51 PM.mpeg" type="audio/mp3">
+  <source src="WhatsApp Audio 2026-05-27 at 11.27.51 PM.mpeg">
 </audio>
 
 <button id="musicBtn">🎵 Play Music</button>
@@ -193,7 +219,7 @@
 <!-- HERO -->
 <section class="hero">
   <h1>Made with love for Anshu ❤️</h1>
-  <p>A digital world filled with memories, smiles and love.</p>
+  <p>A small digital world filled with memories, love, and endless smiles.</p>
   <button class="btn">Explore Memories ✨</button>
 </section>
 
@@ -210,7 +236,33 @@
 
 <!-- QUOTES -->
 <section class="quotes">
-  <h2>Sweet Words 💌</h2>
+  <h2>Words for Her 💖</h2>
+
+  <div class="quotes-container">
+    <div class="quote-box">
+      <p>“You are not just special—you are my favorite kind of magic.”</p>
+    </div>
+
+    <div class="quote-box">
+      <p>“Your smile has the power to turn my entire day into sunshine.”</p>
+    </div>
+
+    <div class="quote-box">
+      <p>“In a world full of noise, your presence feels like peace.”</p>
+    </div>
+
+    <div class="quote-box">
+      <p>“If beauty had a name, it would quietly whisper yours.”</p>
+    </div>
+
+    <div class="quote-box">
+      <p>“Every moment with you feels like a beautiful memory in advance.”</p>
+    </div>
+
+    <div class="quote-box">
+      <p>“You are the reason ordinary days feel extraordinary.”</p>
+    </div>
+  </div>
 </section>
 
 <!-- VIDEOS -->
@@ -226,7 +278,10 @@
 <section class="final">
   <div class="final-box">
     <h2>A Little Surprise 🌸</h2>
-    <p>You make every moment brighter and more beautiful.</p>
+    <p>
+      Some people come into our lives and quietly make everything better.
+      You are one of those rare, beautiful souls.
+    </p>
     <button class="btn">Stay Amazing ✨</button>
   </div>
 </section>
@@ -234,7 +289,6 @@
 <footer>Made with ❤️ and creativity.</footer>
 
 <script>
-  // MUSIC TOGGLE
   const music = document.getElementById("bgMusic");
   const btn = document.getElementById("musicBtn");
 
@@ -263,9 +317,8 @@
     setTimeout(() => heart.remove(), 7000);
   }
 
-  setInterval(createHeart, 300);
+  setInterval(createHeart, 250);
 
-  // SCROLL BUTTON
   document.querySelector(".btn").addEventListener("click", () => {
     document.querySelector(".gallery").scrollIntoView({ behavior: "smooth" });
   });
